@@ -10,7 +10,7 @@ public class FanTotallyRandomBehavior : FanScript
     public float _maxSpeed;
     [SerializeField]
     public float _minSpeed;
-    
+
     [SerializeField]
     public float _minSpeedToChange;
     [SerializeField]
@@ -34,7 +34,7 @@ public class FanTotallyRandomBehavior : FanScript
             FanLinearBehaviourScript behaviorLinear = GetComponent<FanLinearBehaviourScript>();
             fanBehaviourScript = behaviorLinear;
 
-            behaviorLinear.Velocity = new Vector3(UnityEngine.Random.Range(_minSpeed, _maxSpeed), 0, UnityEngine.Random.Range(_minSpeed, _maxSpeed));
+            behaviorLinear.Velocity = new Vector3(UnityEngine.Random.Range(-_maxSpeed, _maxSpeed), 0, UnityEngine.Random.Range(-_maxSpeed, _maxSpeed));
             behaviorLinear.TimeChange = timeToChange;
 
             behaviorLinear.Init();

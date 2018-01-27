@@ -7,7 +7,7 @@ public class PlayerRunScript : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField]
-    private float velocityMax;
+    public float velocityMax;
     [SerializeField]
     private float acceleration;
     [SerializeField]
@@ -15,7 +15,7 @@ public class PlayerRunScript : MonoBehaviour
     [SerializeField]
     private float frenado;
 
-    private float velocity = 0.0f;
+    public float velocity = 0.0f;
 
     private PlayerScript player;
 
@@ -34,7 +34,7 @@ public class PlayerRunScript : MonoBehaviour
 
         if (actualAcc == 0)
         {
-            actualAcc = Input.GetAxis("VerticalP" + player.getPlayerNumber()+"PC");
+            actualAcc = Input.GetAxis("VerticalP" + player.getPlayerNumber() + "PC");
         }
         if (actualAcc == 0)
         {

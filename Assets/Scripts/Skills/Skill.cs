@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Skill : MonoBehaviour
 {
     [SerializeField]
-    private int playerID;
+    public int playerID;
     [SerializeField]
     private float coolDown;
     public float elapseTime = 0;
@@ -38,7 +38,8 @@ public abstract class Skill : MonoBehaviour
 
     public abstract void Fun();
 
-    public void setPlayerID(int id) {
+    public void setPlayerID(int id)
+    {
         playerID = id;
     }
 

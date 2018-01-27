@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillController : MonoBehaviour {
+public class SkillController : MonoBehaviour
+{
     [SerializeField]
-    private Skill[] skillsList;
+    public Skill[] skillsList;
     private List<GameObject> skillMarquers = new List<GameObject>();
     [SerializeField]
     private GameObject marcador;
 
     // Use this for initialization
-    void Start () {
-        
+    void Start()
+    {
+
         Transform[] ts = marcador.GetComponentsInChildren<Transform>();
         if (ts != null)
         {
             int i = 0;
             foreach (Transform t in ts)
             {
-                if (t != null && t.parent.gameObject != null && i>0)
+                if (t != null && t.parent.gameObject != null && i > 0)
                     skillMarquers.Add(t.gameObject);
                 i++;
             }
         }
-           
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         //reactivamos los controles
         if (skillsList[0].isActive())
@@ -55,17 +58,17 @@ public class SkillController : MonoBehaviour {
             }
         }
 
-       //if (skillsList[2].isActive())
-       //{
-       //    if (skillsList[2].getPlayerID() == 1)
-       //    {
-       //        skillMarquers[2].GetComponent<Image>().color = new Color(0, 255, 0);
-       //    }
-       //    else
-       //    {
-       //        skillMarquers[2].GetComponent<Image>().color = new Color(0, 0, 255);
-       //    }
-       //}
+        //if (skillsList[2].isActive())
+        //{
+        //    if (skillsList[2].getPlayerID() == 1)
+        //    {
+        //        skillMarquers[2].GetComponent<Image>().color = new Color(0, 255, 0);
+        //    }
+        //    else
+        //    {
+        //        skillMarquers[2].GetComponent<Image>().color = new Color(0, 0, 255);
+        //    }
+        //}
 
         float skill01P1 = Input.GetAxisRaw("Skill01P1");
         float skill02P1 = Input.GetAxisRaw("Skill02P1");
@@ -100,10 +103,10 @@ public class SkillController : MonoBehaviour {
                 skillsList[1].setPlayerID(2);
                 skillMarquers[1].GetComponent<Image>().color = new Color(0, 0, 1);
             }
-          //  if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
-          //  {
-          //      skillsList[2].setPlayerID(2);
-          //  }
+            //  if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
+            //  {
+            //      skillsList[2].setPlayerID(2);
+            //  }
         }
         else
         {//usar
@@ -113,7 +116,7 @@ public class SkillController : MonoBehaviour {
                 {
                     skillsList[0].Execute();
                     skillMarquers[0].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
-                }               
+                }
             }
             if (skill02P1 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 1)
             {
@@ -123,10 +126,10 @@ public class SkillController : MonoBehaviour {
                     skillMarquers[1].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
                 }
             }
-      //  if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
-      //  {
-      //      skillsList[2].Execute(Time.deltaTime);
-      //  }
+            //  if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
+            //  {
+            //      skillsList[2].Execute(Time.deltaTime);
+            //  }
         }
 
         if (switchP2 == 1)
@@ -135,16 +138,16 @@ public class SkillController : MonoBehaviour {
             {
                 skillsList[0].setPlayerID(1);
                 skillMarquers[0].GetComponent<Image>().color = new Color(0, 1, 0);
-            } 
+            }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].setPlayerID(1);
                 skillMarquers[1].GetComponent<Image>().color = new Color(0, 1, 0);
             }
-           //if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
-           //{
-           //    skillsList[2].setPlayerID(2);
-           //}
+            //if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
+            //{
+            //    skillsList[2].setPlayerID(2);
+            //}
         }
         else
         {//usar
@@ -158,19 +161,19 @@ public class SkillController : MonoBehaviour {
                 skillsList[1].Execute();
                 skillMarquers[1].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             }
-          //  if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
-          //  {
-          //      skillsList[2].Execute(Time.deltaTime);
-          //  }
+            //  if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
+            //  {
+            //      skillsList[2].Execute(Time.deltaTime);
+            //  }
         }
 
-       //Debug.Log("skill01P1 " + skill01P1);
-       //Debug.Log("skill02P1 " + skill02P1);
-       //Debug.Log("skill03P1 " + skill03P1);
-       //Debug.Log("skill01P2 " + skill01P2);
-       //Debug.Log("skill02P2 " + skill02P2);
-       //Debug.Log("skill03P2 " + skill03P2);
-       //Debug.Log("switchP1 " + switchP1);
-       //Debug.Log("switchP2 " + switchP2);
+        //Debug.Log("skill01P1 " + skill01P1);
+        //Debug.Log("skill02P1 " + skill02P1);
+        //Debug.Log("skill03P1 " + skill03P1);
+        //Debug.Log("skill01P2 " + skill01P2);
+        //Debug.Log("skill02P2 " + skill02P2);
+        //Debug.Log("skill03P2 " + skill03P2);
+        //Debug.Log("switchP1 " + switchP1);
+        //Debug.Log("switchP2 " + switchP2);
     }
 }

@@ -20,6 +20,9 @@ public class GUITopBar : MonoBehaviour
     [SerializeField]
     private string _goalTag;
 
+    [SerializeField]
+    private float maxDistanceTokenEnemy;
+
 
     private Transform _player01;
     private Transform _player02;
@@ -78,7 +81,8 @@ public class GUITopBar : MonoBehaviour
         UpdatePlayerPos(_player01, _player01Icon, _maxPlayer1Distance, true);
         UpdatePlayerPos(_player02, _player02Icon, _maxPlayer2Distance, false);
 
-        //UpdateEnemyPosition(_enemy01, _player01, _enemy01Icon, _maxPlayer1Distance, true);
+        UpdateEnemyPosition(_enemy01, _player01Icon, _player01, _enemy01Icon, _maxPlayer1Distance, true);
+        UpdateEnemyPosition(_enemy02, _player02Icon, _player02, _enemy02Icon, _maxPlayer2Distance, false);
     }
 
     private void UpdatePlayerPos(Transform player, RectTransform playerIcon, float maxDistance, bool left)
@@ -88,18 +92,24 @@ public class GUITopBar : MonoBehaviour
 
         float distancePercentage = Mathf.Clamp01(distanceToGoalMagnitude / maxDistance);
 
-        playerIcon.transform.localPosition = new Vector3(0.5f * _bgBar.sizeDelta.x * distancePercentage * ( left ? -1 : 1 ),
+        playerIcon.transform.localPosition = new Vector3(
+            0.5f * _bgBar.sizeDelta.x * distancePercentage * ( left ? -1 : 1 ),
            playerIcon.transform.localPosition.y, playerIcon.transform.localPosition.z);
     }
 
-    private void UpdateEnemyPosition(EnemyController enemy01, Transform playerIcon, Transform playerToFollow, RectTransform enemy01Icon, float maxDistance, bool left)
+    private void UpdateEnemyPosition(EnemyController enemy, Transform playerIcon, Transform playerToFollow, RectTransform enemyIcon, float maxDistance, bool left)
     {
-        Vector3 distanceToPlayer = playerToFollow.position - enemy01.transform.position;
+        Vector3 distanceToPlayer = playerToFollow.position - enemy.transform.position;
+
         float distanceToPlayerMagnitude = distanceToPlayer.magnitude;
 
-        float distancePercentage = Mathf.Clamp01(distanceToPlayerMagnitude / maxDistance);
-        
-        enemy01Icon.transform.localPosition = new Vector3(0.5f * _bgBar.sizeDelta.x * distancePercentage * (left ? -1 : 1),
-        enemy01Icon.transform.localPosition.y, playerIcon.transform.localPosition.z);
+        float distance = distanceToPlayerMagnitude / maxDistance * maxDistanceTokenEnemy;
+
+        Debug.Log(playerIcon.transform.localPosition.x);
+        Debug.Log(playerIcon.transform.localPosition.x - distance);
+
+        enemyIcon.transform.localPosition = new Vector3(playerIcon.transform.localPosition.x + distance * (left ? -1 : 1),
+            playerIcon.transform.localPosition.y,
+            playerIcon.transform.localPosition.z);
     }
 }

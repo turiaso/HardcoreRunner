@@ -17,7 +17,12 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-    } 
+    }
+
+    void LateUpdate()
+    {
+        transform.position = GetComponentInChildren<Rigidbody>().position;
+    }
 
     public int getPlayerNumber()
     {

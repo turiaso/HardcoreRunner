@@ -16,4 +16,9 @@ public class FanScript : MonoBehaviour {
 	void Update () {
         fanBehaviourScript.Fun(Time.deltaTime);
     }
+
+    void LateUpdate()
+    {
+        transform.position = GetComponentInChildren<Rigidbody>().position;
+    }
 }

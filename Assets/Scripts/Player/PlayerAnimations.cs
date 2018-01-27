@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +14,13 @@ public class PlayerAnimations : MonoBehaviour
     public Animation _animation;
 
     public float _closeToMaxToConsiderRun;
-    bool _doingPush;
 
     public PlayerRunScript _playerMovement;
     public PlayerScript _playerScript;
 
 
+    float CDRemaining = 0;
+    float _pushAnimTime = 1.0f;
 
     void Start()
     {
@@ -28,18 +30,28 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CDRemaining -= Time.deltaTime;
+
         if (_skillController)
         {
+            //if (CDRemaining <= 0 && !_skillController.skillsList[1].isActive() && _skillController.skillsList[1].getPlayerID() == _playerScript.getPlayerNumber())
             if (!_skillController.skillsList[1].isActive() && _skillController.skillsList[1].getPlayerID() == _playerScript.getPlayerNumber())
             {
-                if (!_doingPush)
+                if (!_animation.IsPlaying(_push.name))
                 {
-                    _animation.Play(_push.name);
+                    if (CDRemaining <= 0)
+                    {
+                        _animation.Play(_push.name);
+                        CDRemaining = _skillController.skillsList[1].coolDown - _skillController.skillsList[1].elapseTime;
+                        StartCoroutine(CancelAnimAfterCo(_pushAnimTime));
+                    }
                 }
                 else
                 {
-                    _animation.Play(_run.name);
-                    _doingPush = false;
+                    if (CDRemaining <= 0)
+                    {
+                        _animation.Play(_run.name);
+                    }
                 }
             }
             else
@@ -59,7 +71,16 @@ public class PlayerAnimations : MonoBehaviour
                     }
                 }
             }
+        }
+    }
 
+    private IEnumerator CancelAnimAfterCo(float _pushAnimTime)
+    {
+        yield return new WaitForSeconds(_pushAnimTime);
+
+        if (!_animation.IsPlaying(_run.name))
+        {
+            _animation.Play(_run.name);
         }
     }
 }

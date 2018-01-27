@@ -7,6 +7,6 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Coll123ision");
+    //    Debug.Log("Coll123ision");
     }
 }

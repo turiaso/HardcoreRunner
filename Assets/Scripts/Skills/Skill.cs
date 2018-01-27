@@ -7,7 +7,7 @@ public abstract class Skill : MonoBehaviour
     [SerializeField]
     public int playerID;
     [SerializeField]
-    private float coolDown;
+    public float coolDown;
     public float elapseTime = 0;
 
     private bool active = true;

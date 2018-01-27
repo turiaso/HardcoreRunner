@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4301139716210778}
   - component: {fileID: 114765423702293092}
   - component: {fileID: 114057907302218098}
+  - component: {fileID: 114146565999685930}
+  - component: {fileID: 114926623083357478}
+  - component: {fileID: 114623691503592814}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Player01
@@ -377,7 +380,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1335505575448904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22ef99aa40d802449a005b322c891719, type: 3}
   m_Name: 
@@ -396,6 +399,32 @@ MonoBehaviour:
   _goalTag: Goal
   _fadeOutTime: 2
   _levelTrack: 0000000001000000010000000200000001000000
+--- !u!114 &114146565999685930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335505575448904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a17d4fb4da6ece44a0b7643bd55ef2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  force: {x: 0, y: 0, z: 0}
+--- !u!114 &114623691503592814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335505575448904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57dbd69cb6731434dac9f867e8e8c4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillsList: []
+  marcador: {fileID: 0}
 --- !u!114 &114765423702293092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,4 +437,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
-  _timeLimit: 99999
+  _timeLimit: 50
+--- !u!114 &114926623083357478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335505575448904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab68fd88cc86f0140a97f677cb597e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 0
+  force: {x: 0, y: 0, z: 0}

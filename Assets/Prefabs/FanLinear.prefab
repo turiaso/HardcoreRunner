@@ -54,8 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4906840890709676}
   - component: {fileID: 65447907370379960}
-  - component: {fileID: 54503135764493726}
   - component: {fileID: 114131769651800414}
+  - component: {fileID: 54368653341884214}
+  - component: {fileID: 114109153947241332}
   m_Layer: 10
   m_Name: Physic
   m_TagString: Untagged
@@ -145,7 +146,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263740361524486}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54503135764493726
+--- !u!54 &54368653341884214
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -172,6 +173,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114109153947241332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630306209112370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcec81c71bc8b4c48a6d766357d7b7c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114119971204799232
 MonoBehaviour:
   m_ObjectHideFlags: 1

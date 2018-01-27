@@ -2,32 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Skill : ScriptableObject
+public abstract class Skill : MonoBehaviour
 {
-    public string _tagOwner;
-    public bool _inCD;
-    public bool _inUse;
+    [SerializeField]
+    private int playerID;
 
-    private void Awake()
-    {
-        ResetVars();
-    }
-
-    private void ResetVars()
-    {
-        _inCD = false;
-        _inUse = false;
-    }
-
-    public void SetInUse(bool inUse)
-    {
-        _inUse = inUse;
-    }
-
-    public bool InUse()
-    {
-        return _inUse;
-    }
-
-    public abstract void Execute();
+    public abstract void Fun(float elapseTime);
 }

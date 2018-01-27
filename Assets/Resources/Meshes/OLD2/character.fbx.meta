@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 779ca683a8c60cb4096165ee0cf4ff32
-timeCreated: 1517045611
+guid: e0a1933dd0adccf44a43c31d69038f45
+timeCreated: 1517056279
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -34,12 +34,6 @@ ModelImporter:
     100052: r_knee
     100054: r_leg
     100056: r_leg 1
-    100058: l_forearm
-    100060: l_hand
-    100062: l_shoulder
-    100064: r_forearm
-    100066: r_hand
-    100068: r_shoulder
     400000: body
     400002: //RootNode
     400004: Character1_Head
@@ -69,19 +63,12 @@ ModelImporter:
     400052: r_knee
     400054: r_leg
     400056: r_leg 1
-    400058: l_forearm
-    400060: l_hand
-    400062: l_shoulder
-    400064: r_forearm
-    400066: r_hand
-    400068: r_shoulder
     4300000: l_leg
     4300002: l_arm
     4300004: r_leg
     4300006: r_arm
     4300008: body
     9500000: //RootNode
-    11100000: //RootNode
     13700000: body
     13700002: l_arm
     13700004: l_leg 1
@@ -127,7 +114,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -166,10 +153,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

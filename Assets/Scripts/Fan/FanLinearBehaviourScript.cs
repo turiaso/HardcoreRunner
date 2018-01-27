@@ -7,8 +7,30 @@ public class FanLinearBehaviourScript : FanBehaviourScript
 
     [SerializeField]
     private Vector3 velocity;
+    public Vector3 Velocity
+    {
+        get
+        {
+            return velocity;
+        }
+        set
+        {
+            velocity = value;
+        }
+    }
     [SerializeField]
     private float timeChange;
+    public float TimeChange
+    {
+        get
+        {
+            return timeChange;
+        }
+        set
+        {
+            timeChange = value;
+        }
+    }
     [SerializeField]
     private bool _rotateToDirection;
 
@@ -16,6 +38,7 @@ public class FanLinearBehaviourScript : FanBehaviourScript
 
     public override void Init()
     {
+        elapseTime = 0;
         if (_rotateToDirection)
         {
             _anim = GetComponentInChildren<Animation>();
@@ -37,7 +60,12 @@ public class FanLinearBehaviourScript : FanBehaviourScript
 
         }
         transform.Translate(velocity * deltaTime);
+    }
 
-
+    public override void Cancel()
+    {
+        base.Cancel();
+        velocity = Vector3.zero;
+        elapseTime = 0;
     }
 }

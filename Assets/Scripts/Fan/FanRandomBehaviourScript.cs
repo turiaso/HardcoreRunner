@@ -8,8 +8,30 @@ public class FanRandomBehaviourScript : FanBehaviourScript
     private Vector3 velocityVector;
     [SerializeField]
     private float velocity;
+    public float Velocity
+    {
+        get
+        {
+            return velocity;
+        }
+        set
+        {
+            velocity = value;
+        }
+    }
     [SerializeField]
     private float timeChange;
+    public float TimeChange
+    {
+        get
+        {
+            return timeChange;
+        }
+        set
+        {
+            timeChange = value;
+        }
+    }
 
     private float elapseTime;
 
@@ -18,6 +40,7 @@ public class FanRandomBehaviourScript : FanBehaviourScript
 
     public override void Init()
     {
+        elapseTime = 0;
         velocityVector = GetNewVelocityVector();
     }
 
@@ -49,5 +72,12 @@ public class FanRandomBehaviourScript : FanBehaviourScript
         }
 
         return newDir;
+    }
+
+    public override void Cancel()
+    {
+        base.Cancel();
+        velocityVector = Vector3.zero;
+        elapseTime = 0;
     }
 }

@@ -57,7 +57,9 @@ public class AudioMix : MonoBehaviour
 
         _maxDistance = ( _goal.transform.position - _player01.transform.position ).magnitude;
 
-        _distancePercentage = _maxDistance / _levelTrack.Count;
+        _distancePercentage = 1.0f / (float)_levelTrack.Count;
+
+        StartIntro(_currentTrack);
     }
 
     public void Update()
@@ -71,19 +73,25 @@ public class AudioMix : MonoBehaviour
     public bool CheckDistance()
     {
         float currentDistance = ( _goal.transform.position - _player01.transform.position ).magnitude;
+        //Debug.Log(currentDistance + "-" + ( ( _currentTrack + 1 ) * _distancePercentage ) + "<" + ( 1 - ( currentDistance / _maxDistance ) ));
         return ( ( _currentTrack + 1 ) * _distancePercentage ) < ( 1 - ( currentDistance / _maxDistance ) );
+    }
+
+    public void StartLevel()
+    {
+        _audioSources[_currentAudioSource].clip = GetTrack(_levelTrack[_currentTrack]);
     }
 
     public void NextLevel()
     {
         StartCoroutine(FadeOutCo());
-        StartIntro();
+        StartIntro(_currentTrack + 1);
         ++_currentTrack;
     }
 
-    private void StartIntro()
+    private void StartIntro(int currentTrack)
     {
-        int nextAudio = _currentTrack + 1;
+        int nextAudio = currentTrack;
         switch (_levelTrack[nextAudio])
         {
             case AudioLevel.Easy:
@@ -98,7 +106,7 @@ public class AudioMix : MonoBehaviour
                 break;
         }
         _introAudioSource.Play();
-        StartCoroutine(StartAudioInSecCo(_introAudioSource.clip.length));
+        StartCoroutine(StartAudioInSecCo(_introAudioSource.clip.length - 0.2f));
     }
 
     private IEnumerator StartAudioInSecCo(float length)
@@ -109,6 +117,8 @@ public class AudioMix : MonoBehaviour
             _currentAudioSource = 0;
 
         _audioSources[_currentAudioSource].clip = GetTrack(_levelTrack[_currentTrack]);
+        _audioSources[_currentAudioSource].Play();
+        _audioSources[_currentAudioSource].volume = 1;
     }
 
     private AudioClip GetTrack(AudioLevel audioLevel)
@@ -127,9 +137,12 @@ public class AudioMix : MonoBehaviour
 
     private IEnumerator FadeOutCo()
     {
+        _timeStamp = 0;
+        int currentAudio = _currentAudioSource;
         while (_timeStamp < _fadeOutTime)
         {
-            _audioSources[_currentAudioSource].volume = Mathf.Lerp(1, 0, _timeStamp / _fadeOutTime);
+            _audioSources[currentAudio].volume = Mathf.Lerp(1, 0, _timeStamp / _fadeOutTime);
+            _timeStamp += Time.deltaTime;
             yield return 0;
         }
     }

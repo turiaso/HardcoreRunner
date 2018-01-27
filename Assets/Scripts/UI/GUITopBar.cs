@@ -94,12 +94,12 @@ public class GUITopBar : MonoBehaviour
 
     private void UpdateEnemyPosition(EnemyController enemy01, Transform playerIcon, Transform playerToFollow, RectTransform enemy01Icon, float maxDistance, bool left)
     {
-        Vector3 distanceToPlayer = enemy01.transform.position - playerToFollow.position;
+        Vector3 distanceToPlayer = playerToFollow.position - enemy01.transform.position;
         float distanceToPlayerMagnitude = distanceToPlayer.magnitude;
 
         float distancePercentage = Mathf.Clamp01(distanceToPlayerMagnitude / maxDistance);
-        float diference = 0.5f * _bgBar.sizeDelta.x * distancePercentage * ( left ? -1 : 1 );
-
-        //float lastPos = playerIcon.transform.localPosition.x 
+        
+        enemy01Icon.transform.localPosition = new Vector3(0.5f * _bgBar.sizeDelta.x * distancePercentage * (left ? -1 : 1),
+        enemy01Icon.transform.localPosition.y, playerIcon.transform.localPosition.z);
     }
 }

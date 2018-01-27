@@ -16,8 +16,9 @@ public class Carga : Skill
         rb = GetComponent<Rigidbody>();
     }
 
-    public override void Fun(float deltaTime)
+    public override void Fun()
     {
+        Debug.Log("Execute Carga");
         //rb.AddForce(force, ForceMode.Impulse);
     }
 }

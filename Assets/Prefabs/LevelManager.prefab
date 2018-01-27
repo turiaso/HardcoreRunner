@@ -439,8 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a17d4fb4da6ece44a0b7643bd55ef2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 0
-  force: {x: 0, y: 0, z: 0}
+  playerID: 1
+  coolDown: 10
+  elapseTime: 0
+  force: {x: 0, y: 106.25, z: 0}
 --- !u!114 &114718540863252262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -452,7 +454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab68fd88cc86f0140a97f677cb597e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerID: 0
+  playerID: 2
+  coolDown: 10
+  elapseTime: 0
   force: {x: 0, y: 0, z: 0}
 --- !u!114 &114731741020173498
 MonoBehaviour:

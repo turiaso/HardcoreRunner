@@ -34,6 +34,10 @@ public class PlayerRunScript : MonoBehaviour
 
         if (actualAcc == 0)
         {
+            actualAcc = Input.GetAxis("VerticalP" + player.getPlayerNumber()+"PC");
+        }
+        if (actualAcc == 0)
+        {
             //arriba o nada
             actualAcc = desacceleration;
         }

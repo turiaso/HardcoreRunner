@@ -24,7 +24,9 @@ public class PlayerTurnScript : MonoBehaviour
     {
 
         float giro = Input.GetAxis("HorizontalP" + player.getPlayerNumber()) * angleVelocity;
-
+        if (giro == 0) {
+            giro = Input.GetAxis("HorizontalP" + player.getPlayerNumber()+"PC") * angleVelocity;
+        }
         /*
         float giro = 0.0f;
         float delta = Time.deltaTime;

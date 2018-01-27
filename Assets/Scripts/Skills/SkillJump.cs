@@ -16,8 +16,11 @@ public class SkillJump : Skill
         rb = GetComponent<Rigidbody>();
     }
 
-    public override void Fun(float deltaTime)
+    public override void Fun()
     {
+        Debug.Log("Execute Jump");
+        var obj = GameObject.FindGameObjectWithTag("Player0" + getPlayerID());
+        obj.GetComponentInChildren<Rigidbody>().AddForce(force, ForceMode.Impulse);
         //rb.AddForce(force, ForceMode.Impulse);
     }
 }

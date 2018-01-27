@@ -6,6 +6,50 @@ public abstract class Skill : MonoBehaviour
 {
     [SerializeField]
     private int playerID;
+    [SerializeField]
+    private float coolDown;
+    public float elapseTime = 0;
 
-    public abstract void Fun(float elapseTime);
+    private bool active = true;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (elapseTime < coolDown)
+        {
+            elapseTime += Time.deltaTime;
+
+            if (elapseTime >= coolDown)
+            {
+                elapseTime = coolDown;
+                active = true;
+            }
+
+        }
+    }
+
+
+    public void Execute()
+    {
+        elapseTime = 0;
+        active = false;
+        Fun();
+    }
+
+    public abstract void Fun();
+
+    public void setPlayerID(int id) {
+        playerID = id;
+    }
+
+    public int getPlayerID()
+    {
+        return playerID;
+    }
+
+    public bool isActive()
+    {
+        return active;
+    }
+
 }

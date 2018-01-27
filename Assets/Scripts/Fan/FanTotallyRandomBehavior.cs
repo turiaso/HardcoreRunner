@@ -10,5 +10,5 @@ public class FanTotallyRandomBehavior : MonoBehaviour
     [SerializeField]
     public float _minSpeed;
 
-    public
+    //public
 }

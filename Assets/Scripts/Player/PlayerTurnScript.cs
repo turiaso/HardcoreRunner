@@ -11,7 +11,6 @@ public class PlayerTurnScript : MonoBehaviour {
     [SerializeField]
     private PlayerScript player;
 
-
     // Use this for initialization   
     void Start () {
 		

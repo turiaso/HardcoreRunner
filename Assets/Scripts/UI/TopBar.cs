@@ -77,21 +77,29 @@ public class TopBar : MonoBehaviour
     {
         UpdatePlayerPos(_player01, _player01Icon, _maxPlayer1Distance, true);
         UpdatePlayerPos(_player02, _player02Icon, _maxPlayer2Distance, false);
+
+        //UpdateEnemyPosition(_enemy01, _player01, _enemy01Icon, _maxPlayer1Distance, true);
     }
 
     private void UpdatePlayerPos(Transform player, RectTransform playerIcon, float maxDistance, bool left)
     {
         Vector3 distanceToGoal = _goal.position - _player01.position;
         float distanceToGoalMagnitude = distanceToGoal.magnitude;
-        if (distanceToGoalMagnitude > maxDistance)
-        {
-            playerIcon.transform.position = new Vector3(_bgBar.sizeDelta.x * _bgBar.lossyScale.x * 0.5f * ( left ? -1 : 1 ),
-                playerIcon.transform.position.y, playerIcon.transform.position.z);
-        }
-        else
-        {
-            float distancePercentage = distanceToGoalMagnitude / maxDistance;
 
-        }
+        float distancePercentage = Mathf.Clamp01(distanceToGoalMagnitude / maxDistance);
+
+        playerIcon.transform.localPosition = new Vector3(0.5f * _bgBar.sizeDelta.x * distancePercentage * ( left ? -1 : 1 ),
+           playerIcon.transform.localPosition.y, playerIcon.transform.localPosition.z);
+    }
+
+    private void UpdateEnemyPosition(EnemyController enemy01, Transform playerIcon, Transform playerToFollow, RectTransform enemy01Icon, float maxDistance, bool left)
+    {
+        Vector3 distanceToPlayer = enemy01.transform.position - playerToFollow.position;
+        float distanceToPlayerMagnitude = distanceToPlayer.magnitude;
+
+        float distancePercentage = Mathf.Clamp01(distanceToPlayerMagnitude / maxDistance);
+        float diference = 0.5f * _bgBar.sizeDelta.x * distancePercentage * ( left ? -1 : 1 );
+
+        //float lastPos = playerIcon.transform.localPosition.x 
     }
 }

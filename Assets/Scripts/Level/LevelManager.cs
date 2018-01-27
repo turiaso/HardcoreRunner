@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void VoidDelegateVoid();
+public delegate void VoidDelegateBool(bool sucess);
+
 public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField]
@@ -14,9 +17,12 @@ public class LevelManager : Singleton<LevelManager>
     private bool _isLevelStart;
     private float _timeStamp;
 
+    public event VoidDelegateVoid OnLevelStart;
+    public event VoidDelegateBool OnLevelFinish;
+
     void Start()
     {
-
+        StartLevel();
     }
 
     void Update()
@@ -31,13 +37,20 @@ public class LevelManager : Singleton<LevelManager>
         }
     }
 
+    public bool IsLevelStart()
+    {
+        return _isLevelStart;
+    }
+
     public void StartLevel()
     {
-
+        if (OnLevelStart != null) OnLevelStart();
+        _isLevelStart = true;
     }
 
     public void FinishLevel(bool success)
     {
-
+        if (OnLevelFinish != null) OnLevelFinish(success);
+        _isLevelStart = false;
     }
 }

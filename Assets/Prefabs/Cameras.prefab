@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tagPlayer: Player02
-  _rotationAngle: 35
-  _offset: {x: 0, y: 10, z: -10}
+  _rotationAngle: 20
+  _offset: {x: 0, y: 8, z: -10}
 --- !u!114 &114950785085259336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,5 +205,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tagPlayer: Player01
-  _rotationAngle: 35
-  _offset: {x: 0, y: 10, z: -10}
+  _rotationAngle: 20
+  _offset: {x: 0, y: 8, z: -10}

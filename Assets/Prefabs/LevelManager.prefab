@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 114731741020173498}
   - component: {fileID: 114407448394581962}
   - component: {fileID: 114718540863252262}
+  - component: {fileID: 114025417552741304}
   m_Layer: 0
   m_Name: Skills
   m_TagString: Untagged
@@ -403,6 +404,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114025417552741304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744172401496904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0718b4b1525c5e84e8c255e8c8604562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+  coolDown: 7
+  elapseTime: 0
+  active: 1
+  altura: 13
+  duration: 4
+  elapseTime2: 0
 --- !u!114 &114057907302218098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,6 +461,7 @@ MonoBehaviour:
   playerID: 1
   coolDown: 10
   elapseTime: 0
+  active: 1
   force: {x: 0, y: 106.25, z: 0}
 --- !u!114 &114718540863252262
 MonoBehaviour:
@@ -457,6 +477,7 @@ MonoBehaviour:
   playerID: 2
   coolDown: 5
   elapseTime: 0
+  active: 1
   force: 51
 --- !u!114 &114731741020173498
 MonoBehaviour:
@@ -472,6 +493,7 @@ MonoBehaviour:
   skillsList:
   - {fileID: 114407448394581962}
   - {fileID: 114718540863252262}
+  - {fileID: 114025417552741304}
   marcador: {fileID: 0}
 --- !u!114 &114765423702293092
 MonoBehaviour:

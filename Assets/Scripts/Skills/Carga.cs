@@ -16,10 +16,15 @@ public class Carga : Skill
         
     }
 
-    public override void Fun()
+    public override void Fun(float elapseTime)
     {
         rb = GameObject.FindGameObjectWithTag("Player0" + getPlayerID()).GetComponentInChildren<Rigidbody>();
         Debug.Log("Execute Carga");
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
     }
+    public override bool Active(float newElapseTime2)
+    {
+        return true;
+    }
+
 }

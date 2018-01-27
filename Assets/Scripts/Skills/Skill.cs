@@ -10,7 +10,7 @@ public abstract class Skill : MonoBehaviour
     public float coolDown;
     public float elapseTime = 0;
 
-    private bool active = true;
+    public bool active = true;
 
     // Update is called once per frame
     void Update()
@@ -29,14 +29,15 @@ public abstract class Skill : MonoBehaviour
     }
 
 
-    public void Execute()
+    public void Execute(float deltaTime)
     {
         elapseTime = 0;
         active = false;
-        Fun();
+        Fun(deltaTime);
     }
 
-    public abstract void Fun();
+    public abstract void Fun(float deltaTime);
+    public abstract bool Active(float newElapseTime2);
 
     public void setPlayerID(int id)
     {

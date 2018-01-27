@@ -382,6 +382,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114731741020173498, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: skillsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4301139716210778, guid: ffe3bff59ef24f24cb9c31c5feafc959, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -419,6 +424,11 @@ Prefab:
       propertyPath: marcador
       value: 
       objectReference: {fileID: 1503821178}
+    - target: {fileID: 114731741020173498, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: skillsList.Array.data[2]
+      value: 
+      objectReference: {fileID: 2047430685}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffe3bff59ef24f24cb9c31c5feafc959, type: 2}
   m_IsPrefabParent: 0
@@ -488,12 +498,12 @@ Prefab:
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 116.5
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 112
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
@@ -682,3 +692,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfeea29ec593cff4f830c4620c88b7a4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2047430680 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1744172401496904, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+    type: 2}
+  m_PrefabInternal: {fileID: 1125017019}
+--- !u!114 &2047430685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2047430680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0718b4b1525c5e84e8c255e8c8604562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerID: 1
+  coolDown: 7
+  elapseTime: 0
+  active: 1
+  altura: 4
+  duration: 4
+  elapseTime2: 0

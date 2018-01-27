@@ -8,7 +8,10 @@ public class PlayerTurnScript : MonoBehaviour {
     [SerializeField]
     private float angleVelocity;
 
-    PlayerScript player;
+
+    private PlayerScript player;
+
+
     // Use this for initialization   
     void Start () {
         player = GetComponent<PlayerScript>();

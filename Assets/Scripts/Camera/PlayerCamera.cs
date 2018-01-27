@@ -3,16 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleCameraFollowPlayer : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {
-
-    public string _tagPlayer;
-
+    [Header("Camera Properties")]
     [SerializeField]
-    private Transform _player;
+    private string _tagPlayer;
 
     [SerializeField]
     private float _rotationAngle;
+
+    private Transform _player;
+
+
+    public Vector3 juan { get; set; }
 
     [SerializeField]
     private Vector3 _offset;
@@ -58,11 +61,12 @@ public class SimpleCameraFollowPlayer : MonoBehaviour
         }
 
         SetPosition();
+        SetCamera();
     }
 
     private void SetCamera()
     {
-        transform.rotation = Quaternion.Euler(Vector3.right * _rotationAngle);
+        transform.rotation = Quaternion.Euler(_rotationAngle, _player.rotation.eulerAngles.y, 0);
     }
 
     private void SetPosition()

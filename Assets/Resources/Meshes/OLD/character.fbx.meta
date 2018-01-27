@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 779ca683a8c60cb4096165ee0cf4ff32
+guid: cf2bd9ceb6fb3a148ac69de8cc3d1cfc
 timeCreated: 1517045611
 licenseType: Free
 ModelImporter:
@@ -69,7 +69,6 @@ ModelImporter:
     4300006: r_arm
     4300008: body
     9500000: //RootNode
-    11100000: //RootNode
     13700000: body
     13700002: l_arm
     13700004: l_leg 1
@@ -80,12 +79,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Default_Material
-    second: {fileID: 2100000, guid: ac5cd36a14f65bd469ac7c8e794651c2, type: 2}
+    second: {fileID: 2100000, guid: f897ae97859cbad44b15e11caff5b541, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2
-    second: {fileID: 2100000, guid: 8c41ae9c449af7441b02e53d9b99fab8, type: 2}
+    second: {fileID: 2100000, guid: fb571819c7829bb4898bf9c04f3d3e6d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -115,7 +114,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -154,10 +153,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

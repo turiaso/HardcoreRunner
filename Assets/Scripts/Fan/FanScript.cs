@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FanScript : MonoBehaviour {
-   
+public class FanScript : MonoBehaviour
+{
+
+    [SerializeField]
     private FanBehaviourScript fanBehaviourScript;
 
     // Use this for initialization
-    void Start () {
-        fanBehaviourScript = GetComponent<FanBehaviourScript>();
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        fanBehaviourScript.Fun(Time.deltaTime);
-    }
-
-    void LateUpdate()
+    void Start()
     {
-        transform.position = GetComponentInChildren<Rigidbody>().position;
+        if (fanBehaviourScript != null)
+            fanBehaviourScript.Init();
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (fanBehaviourScript != null)
+            fanBehaviourScript.Fun(Time.deltaTime);
+    }
+
+
 }

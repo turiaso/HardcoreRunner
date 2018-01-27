@@ -15,6 +15,6 @@ public class DebugGamePad : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(Input.GetAxis("VerticalP1"));
+        //Debug.Log(Input.GetAxis("VerticalP1"));
     }
 }

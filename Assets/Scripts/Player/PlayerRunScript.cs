@@ -16,23 +16,22 @@ public class PlayerRunScript : MonoBehaviour {
 
     private float velocity = 0.0f;
 
-    [SerializeField]
     private PlayerScript player;
 
     // Use this for initialization   
     void Start () {
-		
-	}
+        player = GetComponent<PlayerScript>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
         float actualAcc = 0.0f;
         float delta = Time.deltaTime;
 
-        if (Input.GetAxis("VerticalP" + player.getPlayerNumber()) > 0)
+        if (Input.GetAxisRaw("VerticalP" + player.getPlayerNumber()) > 0)
         {//arriba
             actualAcc = acceleration;
-        }else if (Input.GetAxis("VerticalP" + player.getPlayerNumber()) < 0)
+        }else if (Input.GetAxisRaw("VerticalP" + player.getPlayerNumber()) < 0)
         {
             actualAcc = frenado;
         }

@@ -6,19 +6,20 @@ public class Carga : Skill
 {
 
     [SerializeField]
-    private Vector3 force;
+    private int force;
 
     private Rigidbody rb;
 
     // Use this for initialization   
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        
     }
 
     public override void Fun()
     {
+        rb = GameObject.FindGameObjectWithTag("Player0" + getPlayerID()).GetComponentInChildren<Rigidbody>();
         Debug.Log("Execute Carga");
-        //rb.AddForce(force, ForceMode.Impulse);
+        rb.AddForce(transform.forward * force, ForceMode.Impulse);
     }
 }

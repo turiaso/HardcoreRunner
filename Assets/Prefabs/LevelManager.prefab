@@ -455,9 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerID: 2
-  coolDown: 10
+  coolDown: 5
   elapseTime: 0
-  force: {x: 0, y: 0, z: 0}
+  force: 51
 --- !u!114 &114731741020173498
 MonoBehaviour:
   m_ObjectHideFlags: 1

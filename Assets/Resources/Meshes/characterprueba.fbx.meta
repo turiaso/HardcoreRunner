@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 0bc6f18be249886448e85f3d9fccaadc
+timeCreated: 1517061123
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: body
+    100002: bottomnurbsSquare1
+    100004: bottomnurbsSquare1 1
+    100006: Character1_Head
+    100008: Character1_Hips
+    100010: Character1_LeftArm
+    100012: Character1_LeftForeArm
+    100014: Character1_LeftForeArm1
+    100016: Character1_LeftHand
+    100018: Character1_LeftHand1
+    100020: Character1_Reference
+    100022: Character1_rightarm
+    100024: Character1_Spine
+    100026: Character1_Spine1
+    100028: //RootNode
+    100030: curve1
+    100032: curve2
+    100034: head_handler
+    100036: Hips_handler
+    100038: joint1
+    100040: joint2
+    100042: joint3
+    100044: joint4
+    100046: l_arm
+    100048: l_arm_handle
+    100050: l_foot
+    100052: l_forearm
+    100054: l_forearm_handler
+    100056: l_hand
+    100058: l_hand_handler
+    100060: l_handle
+    100062: l_knee
+    100064: l_leg
+    100066: l_leg 1
+    100068: l_leg_rotation
+    100070: l_shoulder
+    100072: l_shoulder_handler
+    100074: leftnurbsSquare1
+    100076: leftnurbsSquare1 1
+    100078: maya
+    100080: r_arm
+    100082: r_arm_handle
+    100084: r_foot
+    100086: r_forearm
+    100088: r_forearm_handler1
+    100090: r_hand
+    100092: r_hand_handler2
+    100094: r_handle
+    100096: r_knee
+    100098: r_leg
+    100100: r_leg 1
+    100102: r_leg_rotation
+    100104: r_shoulder
+    100106: r_shoulder_handler
+    100108: rightnurbsSquare1
+    100110: rightnurbsSquare1 1
+    100112: spine_rotation
+    100114: topnurbsSquare1
+    100116: topnurbsSquare1 1
+    400000: body
+    400002: bottomnurbsSquare1
+    400004: bottomnurbsSquare1 1
+    400006: Character1_Head
+    400008: Character1_Hips
+    400010: Character1_LeftArm
+    400012: Character1_LeftForeArm
+    400014: Character1_LeftForeArm1
+    400016: Character1_LeftHand
+    400018: Character1_LeftHand1
+    400020: Character1_Reference
+    400022: Character1_rightarm
+    400024: Character1_Spine
+    400026: Character1_Spine1
+    400028: //RootNode
+    400030: curve1
+    400032: curve2
+    400034: head_handler
+    400036: Hips_handler
+    400038: joint1
+    400040: joint2
+    400042: joint3
+    400044: joint4
+    400046: l_arm
+    400048: l_arm_handle
+    400050: l_foot
+    400052: l_forearm
+    400054: l_forearm_handler
+    400056: l_hand
+    400058: l_hand_handler
+    400060: l_handle
+    400062: l_knee
+    400064: l_leg
+    400066: l_leg 1
+    400068: l_leg_rotation
+    400070: l_shoulder
+    400072: l_shoulder_handler
+    400074: leftnurbsSquare1
+    400076: leftnurbsSquare1 1
+    400078: maya
+    400080: r_arm
+    400082: r_arm_handle
+    400084: r_foot
+    400086: r_forearm
+    400088: r_forearm_handler1
+    400090: r_hand
+    400092: r_hand_handler2
+    400094: r_handle
+    400096: r_knee
+    400098: r_leg
+    400100: r_leg 1
+    400102: r_leg_rotation
+    400104: r_shoulder
+    400106: r_shoulder_handler
+    400108: rightnurbsSquare1
+    400110: rightnurbsSquare1 1
+    400112: spine_rotation
+    400114: topnurbsSquare1
+    400116: topnurbsSquare1 1
+    4300000: l_leg
+    4300002: l_arm
+    4300004: r_leg
+    4300006: r_arm
+    4300008: body
+    9500000: //RootNode
+    13700000: body
+    13700002: l_arm
+    13700004: l_leg
+    13700006: r_arm
+    13700008: r_leg
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_Material
+    second: {fileID: 2100000, guid: ac5cd36a14f65bd469ac7c8e794651c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: f6ea8861b3d1c76468d2dcad5144c3cf, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

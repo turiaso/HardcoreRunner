@@ -7,6 +7,17 @@ public class FanScript : MonoBehaviour
 
     [SerializeField]
     protected FanBehaviourScript fanBehaviourScript;
+    public FanBehaviourScript FanBehaviorScript
+    {
+        get
+        {
+            return fanBehaviourScript;
+        }
+        set
+        {
+            fanBehaviourScript = value;
+        }
+    }
 
     // Use this for initialization
     void Start()

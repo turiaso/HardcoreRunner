@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 4a4cec4d46f380f4d924e73b6d2d8d2c
+timeCreated: 1517061464
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: body
+    100002: Character1_Head
+    100004: Character1_Hips
+    100006: Character1_LeftArm
+    100008: Character1_LeftForeArm
+    100010: Character1_LeftForeArm1
+    100012: Character1_LeftHand
+    100014: Character1_LeftHand1
+    100016: Character1_rightarm
+    100018: Character1_Spine
+    100020: Character1_Spine1
+    100022: //RootNode
+    100024: curve1
+    100026: curve2
+    100028: joint1
+    100030: joint2
+    100032: joint3
+    100034: joint4
+    100036: l_arm
+    100038: l_foot
+    100040: l_forearm
+    100042: l_hand
+    100044: l_knee
+    100046: l_leg
+    100048: l_leg 1
+    100050: l_shoulder
+    100052: maya
+    100054: r_arm
+    100056: r_foot
+    100058: r_forearm
+    100060: r_hand
+    100062: r_knee
+    100064: r_leg
+    100066: r_leg 1
+    100068: r_shoulder
+    400000: body
+    400002: Character1_Head
+    400004: Character1_Hips
+    400006: Character1_LeftArm
+    400008: Character1_LeftForeArm
+    400010: Character1_LeftForeArm1
+    400012: Character1_LeftHand
+    400014: Character1_LeftHand1
+    400016: Character1_rightarm
+    400018: Character1_Spine
+    400020: Character1_Spine1
+    400022: //RootNode
+    400024: curve1
+    400026: curve2
+    400028: joint1
+    400030: joint2
+    400032: joint3
+    400034: joint4
+    400036: l_arm
+    400038: l_foot
+    400040: l_forearm
+    400042: l_hand
+    400044: l_knee
+    400046: l_leg
+    400048: l_leg 1
+    400050: l_shoulder
+    400052: maya
+    400054: r_arm
+    400056: r_foot
+    400058: r_forearm
+    400060: r_hand
+    400062: r_knee
+    400064: r_leg
+    400066: r_leg 1
+    400068: r_shoulder
+    4300000: l_leg
+    4300002: l_arm
+    4300004: r_leg
+    4300006: r_arm
+    4300008: body
+    9500000: //RootNode
+    13700000: body
+    13700002: l_arm
+    13700004: l_leg 1
+    13700006: r_arm
+    13700008: r_leg 1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 4479b677b50fd4a45bdc5d564db4515b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

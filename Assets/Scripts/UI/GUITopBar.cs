@@ -83,7 +83,7 @@ public class GUITopBar : MonoBehaviour
 
     private void UpdatePlayerPos(Transform player, RectTransform playerIcon, float maxDistance, bool left)
     {
-        Vector3 distanceToGoal = _goal.position - _player01.position;
+        Vector3 distanceToGoal = _goal.position - player.position;
         float distanceToGoalMagnitude = distanceToGoal.magnitude;
 
         float distancePercentage = Mathf.Clamp01(distanceToGoalMagnitude / maxDistance);

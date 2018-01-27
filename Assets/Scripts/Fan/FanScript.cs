@@ -6,7 +6,7 @@ public class FanScript : MonoBehaviour
 {
 
     [SerializeField]
-    private FanBehaviourScript fanBehaviourScript;
+    protected FanBehaviourScript fanBehaviourScript;
 
     // Use this for initialization
     void Start()

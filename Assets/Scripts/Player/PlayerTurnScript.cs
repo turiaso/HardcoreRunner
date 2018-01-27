@@ -14,8 +14,8 @@ public class PlayerTurnScript : MonoBehaviour {
 
     // Use this for initialization   
     void Start () {
-		
-	}
+        player = GetComponent<PlayerScript>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,11 +23,11 @@ public class PlayerTurnScript : MonoBehaviour {
         float delta = Time.deltaTime;
 
         //float actualGiro = 0.0f;       
-        if (Input.GetAxis("HorizontalP" + player.getPlayerNumber()) > 0)
+        if (Input.GetAxisRaw("HorizontalP" + player.getPlayerNumber()) > 0)
         {//derecha
             giro = angleVelocity;
         }
-        else if (Input.GetAxis("HorizontalP" + player.getPlayerNumber()) < 0)
+        else if (Input.GetAxisRaw("HorizontalP" + player.getPlayerNumber()) < 0)
         {//izquierda
             giro = -angleVelocity;
         }

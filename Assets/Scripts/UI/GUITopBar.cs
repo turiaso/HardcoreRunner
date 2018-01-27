@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopBar : MonoBehaviour
+public class GUITopBar : MonoBehaviour
 {
     [SerializeField]
     private string _player01Tag;

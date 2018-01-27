@@ -465,7 +465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57dbd69cb6731434dac9f867e8e8c4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillsList: []
+  skillsList:
+  - {fileID: 114407448394581962}
+  - {fileID: 114718540863252262}
   marcador: {fileID: 0}
 --- !u!114 &114765423702293092
 MonoBehaviour:

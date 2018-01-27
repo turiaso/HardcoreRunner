@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Carga:Skill{
+public class Carga : Skill
+{
 
     [SerializeField]
     private Vector3 force;
@@ -17,6 +18,6 @@ public class Carga:Skill{
 
     public override void Fun(float deltaTime)
     {
-        rb.AddForce(force, ForceMode.Impulse);
+        //rb.AddForce(force, ForceMode.Impulse);
     }
 }

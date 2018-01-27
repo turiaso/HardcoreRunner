@@ -2,27 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour {
+public class PlayerScript : MonoBehaviour
+{
 
     [Header("Properties")]
     [SerializeField]
-    private int playerNumber = 1;
+    private int playerNumber;
 
 
     // Use this for initialization   
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    void Start()
+    {
     }
 
-    void LateUpdate()
-    {
-        transform.position = GetComponentInChildren<Rigidbody>().position;
-    }
+
 
     public int getPlayerNumber()
     {
@@ -31,4 +24,3 @@ public class PlayerScript : MonoBehaviour {
 
 
 }
-        

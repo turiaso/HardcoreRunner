@@ -22,6 +22,7 @@ public class GUIClosePolice : MonoBehaviour
         if (( _enemy.position - _player.position ).sqrMagnitude < _enemyCloseToPlayerDistance * _enemyCloseToPlayerDistance)
         {
             if (!_policeFace.activeSelf) _policeFace.SetActive(true);
+            GetComponent<AudioPlay>().Play();
         }
         else
         {

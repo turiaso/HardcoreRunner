@@ -42,7 +42,7 @@ public class SkillFly : Skill
         elapseTime = 0;
         managePos = player.transform.position.y + altura;
         StartCoroutine(Ascensdent(player, managePos));
-        isPlayerActive[getPlayerID()] = true;
+        isPlayerActive[getPlayerID() - 1] = true;
     }
 
 
@@ -108,11 +108,11 @@ public class SkillFly : Skill
         }
         player.GetComponentInChildren<Rigidbody>().useGravity = true;
 
-        isPlayerActive[getPlayerID()] = false;
+        isPlayerActive[getPlayerID() - 1] = false;
     }
 
     public override bool isActive()
     {
-        return !isPlayerActive[getPlayerID()];
+        return !isPlayerActive[getPlayerID() - 1];
     }
 }

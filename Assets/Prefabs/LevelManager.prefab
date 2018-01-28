@@ -55,7 +55,6 @@ GameObject:
   - component: {fileID: 114731741020173498}
   - component: {fileID: 114407448394581962}
   - component: {fileID: 114718540863252262}
-  - component: {fileID: 114025417552741304}
   - component: {fileID: 114810894454466098}
   m_Layer: 0
   m_Name: Skills
@@ -405,26 +404,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114025417552741304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744172401496904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0718b4b1525c5e84e8c255e8c8604562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerID: 1
-  coolDown: 7
-  elapseTime: 0
-  active: 1
-  altura: 13
-  scalaSubida: 0
-  loopTime: 0
-  duration: 4
-  elapseTime2: 0
 --- !u!114 &114057907302218098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,12 +419,12 @@ MonoBehaviour:
   _audioSources:
   - {fileID: 82343031038366918}
   - {fileID: 82026693282944838}
-  _intoEasy: {fileID: 8300000, guid: 513e01f0eaf55614b8d480eb2cd514df, type: 3}
-  _intoMedium: {fileID: 8300000, guid: 310b95f462d551349b63c1f52bd8556a, type: 3}
-  _intoHard: {fileID: 8300000, guid: 978ffec62e19d2e4482e1d239b68b42d, type: 3}
-  _trackEasy: {fileID: 8300000, guid: ce7ef52fc22f653469c1648e35d249b7, type: 3}
-  _trackMedium: {fileID: 8300000, guid: e7bcba96d3da50d4cb29cf6f3d9366fd, type: 3}
-  _trackHard: {fileID: 8300000, guid: 24824f535bb4468459e7543439900e43, type: 3}
+  _intoEasy: {fileID: 8300000, guid: 18fc228733a146f4498a92f1cd4e6b79, type: 3}
+  _intoMedium: {fileID: 8300000, guid: cffafd279f134304286e6746b08601bd, type: 3}
+  _intoHard: {fileID: 8300000, guid: 6a8b8a1af0c8e75469eae7cac73f1259, type: 3}
+  _trackEasy: {fileID: 8300000, guid: 1474d704b885c6340969e202c3f143e7, type: 3}
+  _trackMedium: {fileID: 8300000, guid: a117b81fe41a9c947b0425b850003b2b, type: 3}
+  _trackHard: {fileID: 8300000, guid: ab55b0aed62adc248b2c05aa041b5c5b, type: 3}
   _player01Tag: Player01
   _goalTag: Goal
   _fadeOutTime: 2
@@ -498,6 +477,12 @@ MonoBehaviour:
   - {fileID: 114718540863252262}
   - {fileID: 114810894454466098}
   marcador: {fileID: 0}
+  _skill1AudioCD: {fileID: 0}
+  _skill2AudioCD: {fileID: 0}
+  _skill3AudioCD: {fileID: 0}
+  _skill1Audio: {fileID: 0}
+  _skill2Audio: {fileID: 0}
+  _skill3Audio: {fileID: 0}
 --- !u!114 &114765423702293092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -529,5 +514,5 @@ MonoBehaviour:
   altura: 4
   scalaSubida: 0.3
   loopTime: 0.01
-  duration: 4
+  duration: 3
   elapseTime2: 0

@@ -19,6 +19,27 @@ public class GUIMainMenu : MonoBehaviour
         _howToPlay.gameObject.SetActive(false);
         _playObj.gameObject.SetActive(false);
         _creditsObj.gameObject.SetActive(false);
+
+        if (GameManager.Instance != null)
+        {
+            StartCoroutine(ResetVolumeCo());
+        }
+    }
+
+    private IEnumerator ResetVolumeCo()
+    {
+        AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
+        float initial = source.volume;
+        float timestamp = 0;
+        float time = 1;
+
+        while (timestamp < time)
+        {
+            timestamp += Time.deltaTime;
+            source.volume = Mathf.Lerp(initial, 1, timestamp / time);
+            yield return 0;
+        }
+        yield return 0;
     }
 
     public void ClickInPlayGame()
@@ -55,9 +76,6 @@ public class GUIMainMenu : MonoBehaviour
 
     private void ShowPlayGameMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
-        return;
-
         _playObj.gameObject.SetActive(true);
         _creditsObj.gameObject.SetActive(false);
         _mainMenuObj.gameObject.SetActive(false);
@@ -77,5 +95,10 @@ public class GUIMainMenu : MonoBehaviour
         _playObj.gameObject.SetActive(false);
         _creditsObj.gameObject.SetActive(false);
         _mainMenuObj.gameObject.SetActive(false);
+    }
+
+    public void PlayLevel(int level)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(level);
     }
 }

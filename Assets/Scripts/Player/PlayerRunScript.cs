@@ -28,6 +28,9 @@ public class PlayerRunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!LevelManager.Instance.IsLevelStart())
+            return;
+
         float delta = Time.deltaTime;
 
         float actualAcc = Input.GetAxis("VerticalP" + player.getPlayerNumber());

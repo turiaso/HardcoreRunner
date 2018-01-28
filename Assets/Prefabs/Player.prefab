@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 114875293381808106}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player02
+  m_TagString: Player01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1010,8 +1010,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534052499371830}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.00021807462}
-  m_LocalPosition: {x: -51.34, y: 0.25, z: 399.17}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.9, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4854608075528106}
@@ -1201,6 +1201,8 @@ Animation:
   - {fileID: 7400000, guid: 44e7a71797150374f945d2ab858fff98, type: 3}
   - {fileID: 7400000, guid: 64dc81556827c6843869af63b8d8c735, type: 3}
   - {fileID: 7400000, guid: e8d43dd700e45a2498179031bc3cc124, type: 3}
+  - {fileID: 7400000, guid: 9a080a86e6dbc0e4ca6617a9e75e4049, type: 3}
+  - {fileID: 7400000, guid: fcb0a6dd5acd9224a802a9b243007aa1, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1240,11 +1242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd02fb0e6d07bc4783436f9e773a2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _idle: {fileID: 7400000, guid: 9a080a86e6dbc0e4ca6617a9e75e4049, type: 3}
   _walk: {fileID: 7400000, guid: 44e7a71797150374f945d2ab858fff98, type: 3}
   _run: {fileID: 7400000, guid: e8d43dd700e45a2498179031bc3cc124, type: 3}
   _push: {fileID: 7400000, guid: 64dc81556827c6843869af63b8d8c735, type: 3}
+  _slash: {fileID: 7400000, guid: fcb0a6dd5acd9224a802a9b243007aa1, type: 3}
   _animation: {fileID: 111480689989285388}
-  _closeToMaxToConsiderRun: 0.5
+  _closeToMaxToConsiderRun: 0.6
   _playerMovement: {fileID: 114906718937794944}
   _playerScript: {fileID: 114909265080506046}
 --- !u!114 &114906718937794944
@@ -1275,7 +1279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
-  reduccionVelocity: 10
 --- !u!114 &114951441438562068
 MonoBehaviour:
   m_ObjectHideFlags: 1

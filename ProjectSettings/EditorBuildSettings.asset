@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/0.LoadingScene.unity
-    guid: 97b82655294336a499d8be9c583a897d
+    path: Assets/Scenes/0.IntroScene.unity
+    guid: 4f4dec111b18bcf4a9a9ff4ea1e31794
   - enabled: 1
     path: Assets/Scenes/1.MainMenu.unity
     guid: e1f0c879e9a67f44a9838c09ac0ae859
@@ -15,5 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/2.Credits.unity
     guid: 18b4c79e89a788343a19540997d9db5a
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/4.RockScene.unity
     guid: 5b5702c62e12f5f42830d69b6deb6d75
+  - enabled: 1
+    path: Assets/Scenes/5.HeavyScene.unity
+    guid: b85267add24152b4683d0ca28fb2bc65
+  - enabled: 1
+    path: Assets/Scenes/6.SpeedScene.unity
+    guid: 3a9b6ba114612f24ab2cb59c84a2d915
+  - enabled: 1
+    path: Assets/Scenes/Z.LoadingScene.unity
+    guid: 97b82655294336a499d8be9c583a897d

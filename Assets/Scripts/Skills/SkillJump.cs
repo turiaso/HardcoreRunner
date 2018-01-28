@@ -29,4 +29,9 @@ public class SkillJump : Skill
         return true;
     }
 
+    public override bool isActive()
+    {
+        return active;
+    }
+
 }

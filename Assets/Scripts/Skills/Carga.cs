@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class Carga : Skill
     // Use this for initialization   
     void Start()
     {
-        
+
     }
 
     public override void Fun(float elapseTime)
@@ -27,4 +28,8 @@ public class Carga : Skill
         return true;
     }
 
+    public override bool isActive()
+    {
+        return active;
+    }
 }

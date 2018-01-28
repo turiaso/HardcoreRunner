@@ -11,10 +11,19 @@ public class SkillFly : Skill
     private float altura;
 
     [SerializeField]
+    private float scalaSubida;
+
+    [SerializeField]
+    private float loopTime;
+
+    [SerializeField]
     private float duration;
 
     [SerializeField]
     private float elapseTime2;
+
+    private GameObject managePlayer = null;
+    private float managePos = 0;
 
 
     void Start()
@@ -23,11 +32,13 @@ public class SkillFly : Skill
 
     public override void Fun(float elapseTime)
     {
-        Debug.Log("Execute Jump");
+        Debug.Log("Execute Fly");
         var player = GameObject.FindGameObjectWithTag("Player0" + getPlayerID());
         player.GetComponentInChildren<Rigidbody>().useGravity = false;
-        player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + altura, player.transform.position.z);
         elapseTime = 0;
+        managePlayer = player;
+        managePos = player.transform.position.y + altura;
+        StartCoroutine("Ascensdent");
     }
 
     public float getelapseTime2()
@@ -49,8 +60,9 @@ public class SkillFly : Skill
                 elapseTime2 = 0;
                 active = true;
                 var player = GameObject.FindGameObjectWithTag("Player0" + getPlayerID());
-                player.GetComponentInChildren<Rigidbody>().useGravity = true;            
-                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - altura, player.transform.position.z);
+                managePlayer = player;
+                managePos = player.transform.position.y - altura;
+                StartCoroutine("Descendent");
                 elapseTime = 0;
             }
             else
@@ -59,6 +71,35 @@ public class SkillFly : Skill
             }
         }
         return true;
+    }
+
+    IEnumerator Ascensdent()
+    {
+        while (managePlayer.transform.position.y < managePos)
+        {
+            float newY = managePlayer.transform.position.y + scalaSubida;
+            if (newY > managePos)
+            {
+                newY = managePos;
+            }
+            managePlayer.transform.position = new Vector3(managePlayer.transform.position.x, newY, managePlayer.transform.position.z);
+            yield return new WaitForSeconds(loopTime);
+        }
+    }
+
+    IEnumerator Descendent()
+    {
+        while (managePlayer.transform.position.y > managePos)
+        {
+            float newY = managePlayer.transform.position.y - scalaSubida;
+            if (newY < managePos)
+            {
+                newY = managePos;
+            }
+            managePlayer.transform.position = new Vector3(managePlayer.transform.position.x, newY, managePlayer.transform.position.z);
+            yield return new WaitForSeconds(loopTime);
+        }
+        managePlayer.GetComponentInChildren<Rigidbody>().useGravity = true;
     }
 
 }

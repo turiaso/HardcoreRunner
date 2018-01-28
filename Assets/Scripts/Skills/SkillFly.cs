@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,12 +23,15 @@ public class SkillFly : Skill
     [SerializeField]
     private float elapseTime2;
 
-    private GameObject managePlayer = null;
     private float managePos = 0;
 
+    List<bool> isPlayerActive;
 
     void Start()
     {
+        isPlayerActive = new List<bool>(2);
+        isPlayerActive.Add(false);
+        isPlayerActive.Add(false);
     }
 
     public override void Fun(float elapseTime)
@@ -36,10 +40,12 @@ public class SkillFly : Skill
         var player = GameObject.FindGameObjectWithTag("Player0" + getPlayerID());
         player.GetComponentInChildren<Rigidbody>().useGravity = false;
         elapseTime = 0;
-        managePlayer = player;
         managePos = player.transform.position.y + altura;
-        StartCoroutine("Ascensdent");
+        StartCoroutine(Ascensdent(player, managePos));
+        isPlayerActive[getPlayerID()] = true;
     }
+
+
 
     public float getelapseTime2()
     {
@@ -52,7 +58,7 @@ public class SkillFly : Skill
     }
     public override bool Active(float newElapseTime2)
     {
-        if (!isActive() )
+        if (!isActive())
         {
             elapseTime2 += newElapseTime2;
             if (elapseTime2 > duration)
@@ -60,9 +66,8 @@ public class SkillFly : Skill
                 elapseTime2 = 0;
                 active = true;
                 var player = GameObject.FindGameObjectWithTag("Player0" + getPlayerID());
-                managePlayer = player;
                 managePos = player.transform.position.y - altura;
-                StartCoroutine("Descendent");
+                StartCoroutine(Descendent(player, managePos));
                 elapseTime = 0;
             }
             else
@@ -73,33 +78,41 @@ public class SkillFly : Skill
         return true;
     }
 
-    IEnumerator Ascensdent()
+
+
+    private IEnumerator Ascensdent(GameObject player, float managePos)
     {
-        while (managePlayer.transform.position.y < managePos)
+        while (player.transform.position.y < managePos)
         {
-            float newY = managePlayer.transform.position.y + scalaSubida;
+            float newY = player.transform.position.y + scalaSubida;
             if (newY > managePos)
             {
                 newY = managePos;
             }
-            managePlayer.transform.position = new Vector3(managePlayer.transform.position.x, newY, managePlayer.transform.position.z);
+            player.transform.position = new Vector3(player.transform.position.x, newY, player.transform.position.z);
             yield return new WaitForSeconds(loopTime);
         }
     }
 
-    IEnumerator Descendent()
+    private IEnumerator Descendent(GameObject player, float managePos)
     {
-        while (managePlayer.transform.position.y > managePos)
+        while (player.transform.position.y > managePos)
         {
-            float newY = managePlayer.transform.position.y - scalaSubida;
+            float newY = player.transform.position.y - scalaSubida;
             if (newY < managePos)
             {
                 newY = managePos;
             }
-            managePlayer.transform.position = new Vector3(managePlayer.transform.position.x, newY, managePlayer.transform.position.z);
+            player.transform.position = new Vector3(player.transform.position.x, newY, player.transform.position.z);
             yield return new WaitForSeconds(loopTime);
         }
-        managePlayer.GetComponentInChildren<Rigidbody>().useGravity = true;
+        player.GetComponentInChildren<Rigidbody>().useGravity = true;
+
+        isPlayerActive[getPlayerID()] = false;
     }
 
+    public override bool isActive()
+    {
+        return !isPlayerActive[getPlayerID()];
+    }
 }

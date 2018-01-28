@@ -49,9 +49,7 @@ public abstract class Skill : MonoBehaviour
         return playerID;
     }
 
-    public bool isActive()
-    {
-        return active;
-    }
+    public abstract bool isActive();
+
 
 }

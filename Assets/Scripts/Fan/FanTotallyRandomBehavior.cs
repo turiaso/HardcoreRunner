@@ -55,12 +55,12 @@ public class FanTotallyRandomBehavior : FanScript
         GetComponentInChildren<Animation>().AddClip(_allAnimations[randomAnim], _allAnimations[randomAnim].name);
         GetComponentInChildren<Animation>().clip = _allAnimations[randomAnim];
         GetComponentInChildren<Animation>().Play();
-        StartCoroutine(ChangeRandom(randomAnim));
+        StartCoroutine(ChangeRandom(timeToChange));
     }
 
-    private IEnumerator ChangeRandom(int randomAnim)
+    private IEnumerator ChangeRandom(float randomAnim)
     {
-        yield return new WaitForSeconds(randomAnim - 0.1f);
+        yield return new WaitForSeconds(randomAnim);
 
         GenerateRandom();
     }

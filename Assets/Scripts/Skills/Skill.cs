@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,4 +55,8 @@ public abstract class Skill : MonoBehaviour
         return active;
     }
 
+    internal bool isReady()
+    {
+        return !isActive() && elapseTime < coolDown;
+    }
 }

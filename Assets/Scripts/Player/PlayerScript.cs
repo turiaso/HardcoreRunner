@@ -9,6 +9,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private int playerNumber;
 
+    [SerializeField]
+    public float reduccionVelocity;
 
     // Use this for initialization   
     void Start()

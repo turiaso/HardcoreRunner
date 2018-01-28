@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,9 @@ public class FanPhysicsScript : MonoBehaviour
 
     [SerializeField]
     private float _angleExtraTop;
+
+    [SerializeField]
+    private float loopTime;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -23,12 +27,30 @@ public class FanPhysicsScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
 
-        if (collision.gameObject.tag.Contains("Player"))
+        if (collision.gameObject.layer == 8)
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * _angleExtraTop / 90 + collision.contacts[0].normal * _collisionStrengh, ForceMode.Impulse);
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(-collision.contacts[0].normal * _collisionStrengh);
+            Debug.Log("Collision");
+            bool hasCargar = false;
+            foreach(Skill skill in LevelManager.Instance.GetComponentInChildren<SkillController>().skillsList)            {
+                if (skill is Carga &&
+                    skill.getPlayerID() == collision.gameObject.GetComponentInParent<PlayerScript>().getPlayerNumber() &&
+                    skill.isReady() )
+                {
+                    hasCargar = true;
+                }
+            }
+            if (hasCargar)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.up * _angleExtraTop / 90 + collision.contacts[0].normal * _collisionStrengh, ForceMode.Impulse);
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(-collision.contacts[0].normal * _collisionStrengh);
+            }
+            else
+            {
+                collision.gameObject.GetComponentInParent<PlayerRunScript>().velocity -= collision.gameObject.GetComponentInParent<PlayerScript>().reduccionVelocity;
+            }
         }
     }
+
+   
 }

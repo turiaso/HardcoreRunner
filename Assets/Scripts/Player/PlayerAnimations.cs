@@ -85,7 +85,7 @@ public class PlayerAnimations : MonoBehaviour
                 {
                     float speedPercentage = _playerMovement.velocity / _playerMovement.velocityMax;
 
-                    if (_closeToMaxToConsiderRun > 0.1f)
+                    if (speedPercentage > 0.1f)
                     {
                         if (_closeToMaxToConsiderRun < speedPercentage)
                         {
@@ -97,19 +97,20 @@ public class PlayerAnimations : MonoBehaviour
                         }
                         else
                         {
-
-                            if (!_animation.IsPlaying(_idle.name))
+                            if (!_animation.IsPlaying(_walk.name))
                             {
-                                _animation.Play(_idle.name);
+                                _animation.Play(_walk.name);
                             }
+
                         }
                     }
                     else
                     {
-                        if (!_animation.IsPlaying(_walk.name))
+                        if (!_animation.IsPlaying(_idle.name))
                         {
-                            _animation.Play(_walk.name);
+                            _animation.Play(_idle.name);
                         }
+
                     }
                 }
             }

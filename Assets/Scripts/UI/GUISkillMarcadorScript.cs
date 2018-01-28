@@ -8,16 +8,6 @@ public class GUISkillMarcadorScript : MonoBehaviour
 
 
     [SerializeField]
-    public List<Image> skillIndicator;
-    // Use this for initialization
-    void Start()
-    {
+    public List<GUISkillMarcadorScriptInfo> skillIndicator;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ public class SkillController : MonoBehaviour
 {
     [SerializeField]
     public Skill[] skillsList;
-    private List<Image> skillMarquers = new List<Image>();
+    private List<GUISkillMarcadorScriptInfo> skillMarquers;
     [SerializeField]
     private GUISkillMarcadorScript marcador;
 
@@ -16,6 +17,11 @@ public class SkillController : MonoBehaviour
     void Start()
     {
         skillMarquers = marcador.skillIndicator;
+
+        skillMarquers[0].list[2].SetActive(false);
+        skillMarquers[1].list[2].SetActive(false);
+        skillMarquers[2].list[2].SetActive(false);
+
         /*
         Transform[] ts = marcador.GetComponentsInChildren<Transform>();
         if (ts != null)
@@ -44,11 +50,13 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[0].getPlayerID() == 1)
             {
-                skillMarquers[0].color = new Color(255, 0, 0);
+                skillMarquers[0].list[0].SetActive(true);
+                skillMarquers[0].list[1].SetActive(false);
             }
             else
             {
-                skillMarquers[0].color = new Color(0, 0, 255);
+                skillMarquers[0].list[0].SetActive(false);
+                skillMarquers[0].list[1].SetActive(true);
             }
         }
 
@@ -56,11 +64,13 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[1].getPlayerID() == 1)
             {
-                skillMarquers[1].color = new Color(255, 0, 0);
+                skillMarquers[1].list[0].SetActive(true);
+                skillMarquers[1].list[1].SetActive(false);
             }
             else
             {
-                skillMarquers[1].color = new Color(0, 0, 255);
+                skillMarquers[1].list[0].SetActive(false);
+                skillMarquers[1].list[1].SetActive(true);
             }
         }
 
@@ -68,11 +78,13 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[2].getPlayerID() == 1)
             {
-                skillMarquers[2].color = new Color(255, 0, 0);
+                skillMarquers[2].list[0].SetActive(true);
+                skillMarquers[2].list[1].SetActive(false);
             }
             else
             {
-                skillMarquers[2].color = new Color(0, 0, 255);
+                skillMarquers[2].list[0].SetActive(false);
+                skillMarquers[2].list[1].SetActive(true);
             }
         }
         else
@@ -108,18 +120,21 @@ public class SkillController : MonoBehaviour
             if (skill01P1 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 1)
             {
                 skillsList[0].setPlayerID(2);
-                skillMarquers[0].GetComponent<Image>().color = new Color(0, 0, 1);
+                skillMarquers[0].list[0].SetActive(false);
+                skillMarquers[0].list[1].SetActive(true);
             }
             if (skill02P1 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 1)
             {
                 skillsList[1].setPlayerID(2);
-                skillMarquers[1].GetComponent<Image>().color = new Color(0, 0, 1);
+                skillMarquers[2].list[0].SetActive(false);
+                skillMarquers[2].list[1].SetActive(true);
             }
 
             if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
             {
                 skillsList[2].setPlayerID(2);
-                skillMarquers[2].GetComponent<Image>().color = new Color(0, 0, 1);
+                skillMarquers[2].list[0].SetActive(false);
+                skillMarquers[2].list[1].SetActive(true);
             }
         }
 
@@ -130,7 +145,7 @@ public class SkillController : MonoBehaviour
                 if (skillsList[0].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[0].Execute(deltaTime);
-                    skillMarquers[0].transform.GetChild(0).GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                    StartCoroutine(FadeOutIn(skillMarquers[0].list[2], skillsList[0].coolDown));
                 }
             }
             if (skill02P1 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 1)
@@ -138,13 +153,14 @@ public class SkillController : MonoBehaviour
                 if (skillsList[1].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[1].Execute(deltaTime);
-                    skillMarquers[1].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                    StartCoroutine(FadeOutIn(skillMarquers[1].list[2], skillsList[1].coolDown));
                 }
             }
             if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
             {
                 skillsList[2].Execute(deltaTime);
-                skillMarquers[2].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                StartCoroutine(FadeOutIn(skillMarquers[2].list[2], skillsList[2].coolDown));
+
 
             }
         }
@@ -154,16 +170,20 @@ public class SkillController : MonoBehaviour
             if (skill01P2 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 2)
             {
                 skillsList[0].setPlayerID(1);
-                skillMarquers[0].GetComponent<Image>().color = new Color(1, 0, 0);
+                skillMarquers[0].list[0].SetActive(true);
+                skillMarquers[0].list[1].SetActive(false);
             }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].setPlayerID(1);
-                skillMarquers[1].GetComponent<Image>().color = new Color(1, 0, 0);
+                skillMarquers[1].list[0].SetActive(true);
+                skillMarquers[1].list[1].SetActive(false);
             }
             if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
             {
                 skillsList[2].setPlayerID(2);
+                skillMarquers[2].list[0].SetActive(true);
+                skillMarquers[2].list[1].SetActive(false);
             }
         }
         else
@@ -171,19 +191,18 @@ public class SkillController : MonoBehaviour
             if (skill01P2 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 2)
             {
                 skillsList[0].Execute(deltaTime);
-                skillMarquers[0].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                StartCoroutine(FadeOutIn(skillMarquers[0].list[2], skillsList[0].coolDown));
             }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].Execute(deltaTime);
-                skillMarquers[1].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                StartCoroutine(FadeOutIn(skillMarquers[1].list[2], skillsList[1].coolDown));
             }
             if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
             {
 
                 skillsList[2].Execute(deltaTime);
-                skillMarquers[2].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
-
+                StartCoroutine(FadeOutIn(skillMarquers[2].list[2], skillsList[2].coolDown));
             }
         }
 
@@ -196,5 +215,20 @@ public class SkillController : MonoBehaviour
         //Debug.Log("skill03P2 " + skill03P2);
         //Debug.Log("switchP1 " + switchP1);
         //Debug.Log("switchP2 " + switchP2);
+    }
+
+    private IEnumerator FadeOutIn(GameObject gameObject, float coolDown)
+    {
+        gameObject.SetActive(true);
+
+        Image image = gameObject.GetComponent<Image>();
+        float timestamp = 0;
+        while (timestamp < coolDown)
+        {
+            timestamp += Time.deltaTime;
+
+            image.fillAmount = Mathf.Lerp(1, 0, timestamp / coolDown);
+            yield return 0;
+        }
     }
 }

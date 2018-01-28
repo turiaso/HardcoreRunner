@@ -988,6 +988,26 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114897243815991284, guid: 70261c0e741147a449ede481344b69c6,
+        type: 2}
+      propertyPath: skillIndicator.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897243815991284, guid: 70261c0e741147a449ede481344b69c6,
+        type: 2}
+      propertyPath: skillIndicator.Array.data[2].list.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897243815991284, guid: 70261c0e741147a449ede481344b69c6,
+        type: 2}
+      propertyPath: skillIndicator.Array.data[1].list.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897243815991284, guid: 70261c0e741147a449ede481344b69c6,
+        type: 2}
+      propertyPath: skillIndicator.Array.data[0].list.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
       propertyPath: m_LocalPosition.x

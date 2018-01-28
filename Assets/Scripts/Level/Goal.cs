@@ -7,6 +7,7 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        LevelManager.Instance.FinishLevel(true);
+        if (other.gameObject.layer == 8)
+            LevelManager.Instance.FinishLevel(true);
     }
 }

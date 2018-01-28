@@ -12,13 +12,7 @@ public class SkillController : MonoBehaviour
     [SerializeField]
     private GUISkillMarcadorScript marcador;
 
-    [Header("Audio")]
-    public AudioSource _skill1AudioCD;
-    public AudioSource _skill2AudioCD;
-    public AudioSource _skill3AudioCD;
-    public AudioSource _skill1Audio;
-    public AudioSource _skill2Audio;
-    public AudioSource _skill3Audio;
+
     // Use this for initialization
 
     void Start()
@@ -158,7 +152,6 @@ public class SkillController : MonoBehaviour
                 if (skillsList[0].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[0].Execute(deltaTime);
-                    _skill1Audio.Play();
                     StartCoroutine(FadeOutIn(skillMarquers[0].list[2], skillsList[0].coolDown, 0));
                 }
             }
@@ -167,14 +160,12 @@ public class SkillController : MonoBehaviour
                 if (skillsList[1].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[1].Execute(deltaTime);
-                    _skill2Audio.Play();
                     StartCoroutine(FadeOutIn(skillMarquers[1].list[2], skillsList[1].coolDown, 1));
                 }
             }
             if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
             {
                 skillsList[2].Execute(deltaTime);
-                _skill3Audio.Play();
                 StartCoroutine(FadeOutIn(skillMarquers[2].list[2], skillsList[2].coolDown, 2));
 
 
@@ -207,20 +198,17 @@ public class SkillController : MonoBehaviour
             if (skill01P2 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 2)
             {
                 skillsList[0].Execute(deltaTime);
-                _skill1Audio.Play();
                 StartCoroutine(FadeOutIn(skillMarquers[0].list[2], skillsList[0].coolDown, 1));
             }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].Execute(deltaTime);
-                _skill2Audio.Play();
                 StartCoroutine(FadeOutIn(skillMarquers[1].list[2], skillsList[1].coolDown, 2));
             }
             if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
             {
 
                 skillsList[2].Execute(deltaTime);
-                _skill3Audio.Play();
                 StartCoroutine(FadeOutIn(skillMarquers[2].list[2], skillsList[2].coolDown, 3));
             }
         }
@@ -253,15 +241,12 @@ public class SkillController : MonoBehaviour
 
         if (skillIndex == 1)
         {
-            _skill1AudioCD.Play();
         }
         if (skillIndex == 2)
         {
-            _skill2AudioCD.Play();
         }
         if (skillIndex == 3)
         {
-            _skill3AudioCD.Play();
         }
     }
 }

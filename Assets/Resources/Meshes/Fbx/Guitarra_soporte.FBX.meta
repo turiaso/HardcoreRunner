@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fae7168352cbd214b96e49f1f099f540
-timeCreated: 1517140539
+guid: 81d52c188f679074dbab91b5c22ecda4
+timeCreated: 1517140537
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Pared
+    4300000: Guitarra_soporte
     9500000: //RootNode
   externalObjects:
   - first:

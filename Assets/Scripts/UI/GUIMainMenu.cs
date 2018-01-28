@@ -22,25 +22,8 @@ public class GUIMainMenu : MonoBehaviour
 
         if (GameManager.Instance != null)
         {
-            StartCoroutine(ResetPitchCo());
             StartCoroutine(ResetVolumeCo());
         }
-    }
-
-    private IEnumerator ResetPitchCo()
-    {
-        AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
-        float initial = source.pitch;
-        float timestamp = 0;
-        float time = 1;
-
-        while (timestamp < time)
-        {
-            timestamp += Time.deltaTime;
-            source.pitch = Mathf.Lerp(initial, 1, timestamp / time);
-            yield return 0;
-        }
-        yield return 0;
     }
 
     private IEnumerator ResetVolumeCo()

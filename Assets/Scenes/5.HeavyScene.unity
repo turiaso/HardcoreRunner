@@ -402,6 +402,51 @@ Prefab:
       propertyPath: _levelTrack.Array.data[8]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _levelTrack.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _levelTrack.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _levelTrack.Array.data[4]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackHard
+      value: 
+      objectReference: {fileID: 8300000, guid: ee4e278ee752f7249b7250ffcb1e7a44, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoHard
+      value: 
+      objectReference: {fileID: 8300000, guid: 889f0d5b109897c4b8bf5cd419140483, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackEasy
+      value: 
+      objectReference: {fileID: 8300000, guid: 91801be24a79993428c8ea92deb8eeea, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoEasy
+      value: 
+      objectReference: {fileID: 8300000, guid: 947291de8ad0ce74bbe500967509ba4d, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackMedium
+      value: 
+      objectReference: {fileID: 8300000, guid: 3dddd5be76e9ae8418ae037eadc1c7a8, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoMedium
+      value: 
+      objectReference: {fileID: 8300000, guid: c7af9147d814491478ac844643486e00, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ffe3bff59ef24f24cb9c31c5feafc959, type: 2}
   m_IsPrefabParent: 0
@@ -673,12 +718,12 @@ Prefab:
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 276
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 203.5
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 224673065425770750, guid: 70261c0e741147a449ede481344b69c6,
         type: 2}

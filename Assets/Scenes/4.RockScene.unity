@@ -421,6 +421,36 @@ Prefab:
       propertyPath: duration
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoEasy
+      value: 
+      objectReference: {fileID: 8300000, guid: 18fc228733a146f4498a92f1cd4e6b79, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoMedium
+      value: 
+      objectReference: {fileID: 8300000, guid: cffafd279f134304286e6746b08601bd, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _intoHard
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a8b8a1af0c8e75469eae7cac73f1259, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackEasy
+      value: 
+      objectReference: {fileID: 8300000, guid: 1474d704b885c6340969e202c3f143e7, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackMedium
+      value: 
+      objectReference: {fileID: 8300000, guid: a117b81fe41a9c947b0425b850003b2b, type: 3}
+    - target: {fileID: 114057907302218098, guid: ffe3bff59ef24f24cb9c31c5feafc959,
+        type: 2}
+      propertyPath: _trackHard
+      value: 
+      objectReference: {fileID: 8300000, guid: ab55b0aed62adc248b2c05aa041b5c5b, type: 3}
     m_RemovedComponents:
     - {fileID: 114025417552741304, guid: ffe3bff59ef24f24cb9c31c5feafc959, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ffe3bff59ef24f24cb9c31c5feafc959, type: 2}

@@ -19,6 +19,41 @@ public class GUIMainMenu : MonoBehaviour
         _howToPlay.gameObject.SetActive(false);
         _playObj.gameObject.SetActive(false);
         _creditsObj.gameObject.SetActive(false);
+
+        StartCoroutine(ResetPitchCo());
+        StartCoroutine(ResetVolumeCo());
+    }
+
+    private IEnumerator ResetPitchCo()
+    {
+        AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
+        float initial = source.pitch;
+        float timestamp = 0;
+        float time = 1;
+
+        while (timestamp < time)
+        {
+            timestamp += Time.deltaTime;
+            source.pitch = Mathf.Lerp(initial, 1, timestamp / time);
+            yield return 0;
+        }
+        yield return 0;
+    }
+
+    private IEnumerator ResetVolumeCo()
+    {
+        AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
+        float initial = source.volume;
+        float timestamp = 0;
+        float time = 1;
+
+        while (timestamp < time)
+        {
+            timestamp += Time.deltaTime;
+            source.volume = Mathf.Lerp(initial, 1, timestamp / time);
+            yield return 0;
+        }
+        yield return 0;
     }
 
     public void ClickInPlayGame()

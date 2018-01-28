@@ -14,7 +14,7 @@ public class ProperlyGameStart
         // return false if you press cancel in the save dialog
         if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
         {
-            EditorSceneManager.OpenScene("Assets/Scenes/0.LoadingScene.unity");
+            EditorSceneManager.OpenScene("Assets/Scenes/0.IntroScene.unity");
             EditorApplication.isPlaying = true;
         }
     }

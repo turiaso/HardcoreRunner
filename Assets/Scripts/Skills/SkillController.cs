@@ -42,6 +42,9 @@ public class SkillController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!LevelManager.Instance.IsLevelStart())
+            return;
+
         float deltaTime = Time.deltaTime;
 
         skillsList[2].Active(deltaTime);
@@ -126,8 +129,8 @@ public class SkillController : MonoBehaviour
             if (skill02P1 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 1)
             {
                 skillsList[1].setPlayerID(2);
-                skillMarquers[2].list[0].SetActive(false);
-                skillMarquers[2].list[1].SetActive(true);
+                skillMarquers[1].list[0].SetActive(false);
+                skillMarquers[1].list[1].SetActive(true);
             }
 
             if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)

@@ -6,9 +6,11 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
 
+    public AnimationClip _idle;
     public AnimationClip _walk;
     public AnimationClip _run;
     public AnimationClip _push;
+    public AnimationClip _slash;
 
     SkillController _skillController;
     public Animation _animation;
@@ -19,8 +21,12 @@ public class PlayerAnimations : MonoBehaviour
     public PlayerScript _playerScript;
 
 
-    float CDRemaining = 0;
+    float CDRemainingPush = 0;
     float _pushAnimTime = 1.0f;
+
+    float CDRemainingSlash = 0;
+    float _slashAnimTime = 1.0f;
+
 
     void Start()
     {
@@ -30,7 +36,7 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CDRemaining -= Time.deltaTime;
+        CDRemainingPush -= Time.deltaTime;
 
         if (_skillController)
         {
@@ -39,16 +45,16 @@ public class PlayerAnimations : MonoBehaviour
             {
                 if (!_animation.IsPlaying(_push.name))
                 {
-                    if (CDRemaining <= 0)
+                    if (CDRemainingPush <= 0)
                     {
                         _animation.Play(_push.name);
-                        CDRemaining = _skillController.skillsList[1].coolDown - _skillController.skillsList[1].elapseTime;
-                        StartCoroutine(CancelAnimAfterCo(_pushAnimTime));
+                        CDRemainingPush = _skillController.skillsList[1].coolDown - _skillController.skillsList[1].elapseTime;
+                        StartCoroutine(CancelAnimAfterCo(_push, _pushAnimTime));
                     }
                 }
                 else
                 {
-                    if (CDRemaining <= 0)
+                    if (CDRemainingPush <= 0)
                     {
                         _animation.Play(_run.name);
                     }
@@ -56,31 +62,68 @@ public class PlayerAnimations : MonoBehaviour
             }
             else
             {
-                if (_closeToMaxToConsiderRun < _playerMovement.velocity / _playerMovement.velocityMax)
+                if (!_skillController.skillsList[2].isActive() && _skillController.skillsList[2].getPlayerID() == _playerScript.getPlayerNumber())
                 {
-                    if (!_animation.IsPlaying(_run.name))
+                    if (!_animation.IsPlaying(_push.name))
                     {
-                        _animation.Play(_run.name);
+                        if (CDRemainingSlash <= 0)
+                        {
+                            _animation.Play(_slash.name);
+                            CDRemainingSlash = _skillController.skillsList[2].coolDown - _skillController.skillsList[2].elapseTime;
+                            StartCoroutine(CancelAnimAfterCo(_slash, _slashAnimTime));
+                        }
+                    }
+                    else
+                    {
+                        if (CDRemainingSlash <= 0)
+                        {
+                            _animation.Play(_run.name);
+                        }
                     }
                 }
                 else
                 {
-                    if (!_animation.IsPlaying(_walk.name))
+                    float speedPercentage = _playerMovement.velocity / _playerMovement.velocityMax;
+
+                    if (_closeToMaxToConsiderRun > 0.1f)
                     {
-                        _animation.Play(_walk.name);
+                        if (_closeToMaxToConsiderRun < speedPercentage)
+                        {
+
+                            if (!_animation.IsPlaying(_run.name))
+                            {
+                                _animation.Play(_run.name);
+                            }
+                        }
+                        else
+                        {
+
+                            if (!_animation.IsPlaying(_idle.name))
+                            {
+                                _animation.Play(_idle.name);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (!_animation.IsPlaying(_walk.name))
+                        {
+                            _animation.Play(_walk.name);
+                        }
                     }
                 }
             }
         }
     }
 
-    private IEnumerator CancelAnimAfterCo(float _pushAnimTime)
-    {
-        yield return new WaitForSeconds(_pushAnimTime);
 
-        if (!_animation.IsPlaying(_run.name))
+    private IEnumerator CancelAnimAfterCo(AnimationClip anim, float animTime)
+    {
+        yield return new WaitForSeconds(animTime);
+
+        if (!_animation.IsPlaying(anim.name))
         {
-            _animation.Play(_run.name);
+            _animation.Play(anim.name);
         }
     }
 }

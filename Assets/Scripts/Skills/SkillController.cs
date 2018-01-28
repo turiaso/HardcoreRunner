@@ -7,27 +7,28 @@ public class SkillController : MonoBehaviour
 {
     [SerializeField]
     public Skill[] skillsList;
-    private List<GameObject> skillMarquers = new List<GameObject>();
+    private List<Image> skillMarquers = new List<Image>();
     [SerializeField]
-    private GameObject marcador;
+    private GUISkillMarcadorScript marcador;
 
     // Use this for initialization
 
     void Start()
     {
-
-
+        skillMarquers = marcador.skillIndicator;
+        /*
         Transform[] ts = marcador.GetComponentsInChildren<Transform>();
         if (ts != null)
         {
             int i = 0;
             foreach (Transform t in ts)
             {
-                if (t != null && t.parent.gameObject != null && i > 0)
-                    skillMarquers.Add(t.gameObject);
+                if (t != null && t.parent.GetComponentInChildren<Image>() != null && i > 0)
+                    skillMarquers.Add(t);
                 i++;
             }
         }
+        */
 
     }
 
@@ -43,11 +44,11 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[0].getPlayerID() == 1)
             {
-                skillMarquers[0].GetComponent<Image>().color = new Color(0, 255, 0);
+                skillMarquers[0].color = new Color(255, 0, 0);
             }
             else
             {
-                skillMarquers[0].GetComponent<Image>().color = new Color(0, 0, 255);
+                skillMarquers[0].color = new Color(0, 0, 255);
             }
         }
 
@@ -55,11 +56,11 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[1].getPlayerID() == 1)
             {
-                skillMarquers[1].GetComponent<Image>().color = new Color(0, 255, 0);
+                skillMarquers[1].color = new Color(255, 0, 0);
             }
             else
             {
-                skillMarquers[1].GetComponent<Image>().color = new Color(0, 0, 255);
+                skillMarquers[1].color = new Color(0, 0, 255);
             }
         }
 
@@ -67,11 +68,11 @@ public class SkillController : MonoBehaviour
         {
             if (skillsList[2].getPlayerID() == 1)
             {
-                skillMarquers[2].GetComponent<Image>().color = new Color(0, 255, 0);
+                skillMarquers[2].color = new Color(255, 0, 0);
             }
             else
             {
-                skillMarquers[2].GetComponent<Image>().color = new Color(0, 0, 255);
+                skillMarquers[2].color = new Color(0, 0, 255);
             }
         }
         else
@@ -100,6 +101,8 @@ public class SkillController : MonoBehaviour
         switchP1 = Input.GetAxisRaw("SwitchP1") != 0.0f ? switchP1 : Input.GetAxisRaw("SwitchP1PC");
         switchP2 = Input.GetAxisRaw("SwitchP2") != 0.0f ? switchP2 : Input.GetAxisRaw("SwitchP2PC");
 
+
+
         if (switchP1 == 1)
         {//transferir
             if (skill01P1 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 1)
@@ -119,6 +122,7 @@ public class SkillController : MonoBehaviour
                 skillMarquers[2].GetComponent<Image>().color = new Color(0, 0, 1);
             }
         }
+
         else
         {//usar
             if (skill01P1 == 1)
@@ -126,7 +130,7 @@ public class SkillController : MonoBehaviour
                 if (skillsList[0].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[0].Execute(deltaTime);
-                    skillMarquers[0].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                    skillMarquers[0].transform.GetChild(0).GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
                 }
             }
             if (skill02P1 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 1)
@@ -134,13 +138,13 @@ public class SkillController : MonoBehaviour
                 if (skillsList[1].isActive() && skillsList[0].getPlayerID() == 1)
                 {
                     skillsList[1].Execute(deltaTime);
-                    skillMarquers[1].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                    skillMarquers[1].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
                 }
             }
             if (skill03P1 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 1)
             {
                 skillsList[2].Execute(deltaTime);
-                skillMarquers[2].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                skillMarquers[2].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
 
             }
         }
@@ -150,12 +154,12 @@ public class SkillController : MonoBehaviour
             if (skill01P2 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 2)
             {
                 skillsList[0].setPlayerID(1);
-                skillMarquers[0].GetComponent<Image>().color = new Color(0, 1, 0);
+                skillMarquers[0].GetComponent<Image>().color = new Color(1, 0, 0);
             }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].setPlayerID(1);
-                skillMarquers[1].GetComponent<Image>().color = new Color(0, 1, 0);
+                skillMarquers[1].GetComponent<Image>().color = new Color(1, 0, 0);
             }
             if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
             {
@@ -167,21 +171,22 @@ public class SkillController : MonoBehaviour
             if (skill01P2 == 1 && skillsList[0].isActive() && skillsList[0].getPlayerID() == 2)
             {
                 skillsList[0].Execute(deltaTime);
-                skillMarquers[0].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                skillMarquers[0].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             }
             if (skill02P2 == 1 && skillsList[1].isActive() && skillsList[1].getPlayerID() == 2)
             {
                 skillsList[1].Execute(deltaTime);
-                skillMarquers[1].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                skillMarquers[1].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
             }
             if (skill03P2 == 1 && skillsList[2].isActive() && skillsList[2].getPlayerID() == 2)
             {
 
                 skillsList[2].Execute(deltaTime);
-                skillMarquers[2].GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+                skillMarquers[2].GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f);
 
             }
         }
+
 
         //Debug.Log("skill01P1 " + skill01P1);
         //Debug.Log("skill02P1 " + skill02P1);

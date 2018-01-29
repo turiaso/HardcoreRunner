@@ -29,6 +29,8 @@ public class GUIMainMenu : MonoBehaviour
     private IEnumerator ResetVolumeCo()
     {
         AudioSource source = GameManager.Instance.GetComponent<AudioSource>();
+        if (!source.isPlaying)
+            source.Play();
         float initial = source.volume;
         float timestamp = 0;
         float time = 1;

@@ -99,6 +99,8 @@ public class SkillController : MonoBehaviour
 
         }
 
+
+
         float skill01P1 = Input.GetAxisRaw("Skill01P1");
         float skill02P1 = Input.GetAxisRaw("Skill02P1");
         float skill03P1 = Input.GetAxisRaw("Skill03P1");
@@ -120,6 +122,16 @@ public class SkillController : MonoBehaviour
         switchP1 = Input.GetAxisRaw("SwitchP1") != 0.0f ? switchP1 : Input.GetAxisRaw("SwitchP1PC");
         switchP2 = Input.GetAxisRaw("SwitchP2") != 0.0f ? switchP2 : Input.GetAxisRaw("SwitchP2PC");
 
+        /*
+        if (skill01P1 != 0)
+            Debug.Log("skill01P1:" + skill01P1);
+        if (skill02P1 != 0)
+            Debug.Log("skill02P1:" + skill02P1);
+        if (skill03P1 != 0)
+            Debug.Log("skill03P1:" + skill03P1);
+        if (switchP1 != 0)
+            Debug.Log("switchP1:" + switchP1);
+            */
 
 
         if (switchP1 == 1)
